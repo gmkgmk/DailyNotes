@@ -1,0 +1,91 @@
+.datepicker-wapper {
+    @fontColor:#1abc9c;
+    @header-height: 40px;
+    width: 240px;
+    font-size: 16px;
+    color: #666;
+    box-shadow: 2px 2px 8px 2px rgba(128, 128, 128, .3);
+    display: none;
+    position: absolute;
+    .datepicker-header {
+        padding: 0 20px;
+        height: @header-height;
+        line-height: @header-height;
+        background: #f0f0f0;
+        border-bottom: 1px solid #ccc;
+        font-weight: bold;
+        text-align: center;
+    }
+    .datepicker-tag{
+        padding: 10px 40px;
+        &:hover{
+          .hover();
+          cursor: pointer
+        }
+    }
+    .datepicker-btn {
+        font-family: serif;
+        font-size: 20px;
+        width: 20px;
+        height: @header-height;
+        line-height: @header-height;
+        color:  @fontColor;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .datepicker-prev-btn {
+        float: left;
+    }
+    .datepicker-next-btn {
+        float: right;
+    }
+    table{
+      width: 100%;
+      border-collapse: collapse
+    }
+    th,td{
+      @thtdHeight:30px;
+      height: @thtdHeight;
+      line-height: @thtdHeight;
+    }
+    th{
+      @thHeight:40px;
+      font-size: 12px;
+      height: @thHeight;
+      line-height: @thHeight;
+    }
+    td{
+      border: 1px solid #f0f0f0;
+      font-size: 10px;
+      cursor: pointer;
+      text-align: center;
+      border-radius: 5px;
+      &:hover{
+          .hover()
+      }
+    }
+    .hover(){
+        background: rgba(0,0,0,.1);
+        color: #666
+    }
+    .font-today(){
+        background:  @fontColor;
+        color: #fff;
+    }
+    .today{
+        .font-today();
+        &:hover{
+         .font-today()
+      }
+    }
+    .old{
+        color: #aaa
+    }
+    .month{
+        padding: 10px;
+    }
+}
+.datepicker-wapper-show{
+    display: block;
+}
