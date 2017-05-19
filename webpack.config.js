@@ -2,10 +2,10 @@ var path = require("path");
 var webpack = require("webpack");
 module.exports = {
   entry: {
-    main: [path.join(__dirname, "window/src/js/main.js")]
+    main: [path.join(__dirname, "Sidebar/js/main.js")]
   },
   output: {
-    path: path.join(__dirname, "window/src/dist"),
+    path: path.join(__dirname, "Sidebar/dist"),
     filename: "[name].bundle.js"
   },
   module: {

@@ -1,0 +1,112 @@
+/* Font Awesome */
+@fa_path: "../../node_modules/font-awesome/less";
+@import "@{fa_path}/variables.less";
+@import "@{fa_path}/mixins.less";
+@import "@{fa_path}/path.less";
+@import "@{fa_path}/core.less";
+@import "@{fa_path}/icons.less";
+
+@sidebarBg:#4A5064;
+@aColor:#aeb9c2;
+@color:#1abc9c;
+
+
+
+html{
+  box-sizing: border-box;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+.resetli(){
+  list-style: none;
+  padding: 0;
+  margin: 0
+}
+
+a{
+  color: #fff;
+  text-decoration: none;
+  transition: all ease .1s;
+  &:link,&:visited{
+    text-decoration: none;
+  }
+  &:hover{
+    cursor: pointer;
+  }
+}
+.G_Sidebar{
+  font-family: "Microsoft Yahei";
+  width: 180px;
+  height: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  background-color:@sidebarBg;
+  >.sidebar-menu{
+    .resetli();
+    >li{
+      a{
+          font-size: 14px;
+          color: @aColor;
+          display: block;
+          padding: 12px 5px 10px 15px;
+          position: relative;
+          z-index:5;
+            &:hover{
+              color: #fff;
+              background: @color;
+          }
+      }
+      .pull-right-icon{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -7px;
+        transition: all ease .5s;
+      }
+      &.active{
+         .pull-right-icon{
+            -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            -o-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+        }
+        .mune-open {
+        }
+      }
+    
+    }
+    .icon{
+      width: 20px;
+      margin-right: 16px;
+    }
+  }
+  .treeview-menu {
+    @treeviewML:5px;
+    overflow: hidden;
+      height :0;
+      transition: .5s all cubic-bezier(0, 1, 0.5, 1);
+    .treeview-menu{
+      padding-left:   @treeviewML + 15px;
+      .treeview-menu{
+        padding-left:@treeviewML + 30px;
+      }
+    }
+    .resetli();
+    li{
+      a{
+        padding:  10px 5px 8px 30px;
+      }
+    }
+  }
+}
+// @-webkit-keyframes sideDown 
+// {
+// form   {height:0;}
+// to {height:auto;}
+// }
+// @-webkit-keyframes sideDown /* Safari and Chrome */
+// {
+// form {height:0;}
+// to {height:auto;}
+// }

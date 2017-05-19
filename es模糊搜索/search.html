@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    * {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    div {
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    ul {
+      width: 200px;
+      margin: auto;
+    }
+
+    li {
+      padding: 3px;
+      border: 1px solid silver;
+      box-shadow: 1px 1px;
+      width: 160px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <input type="text" id="param">
+    <button type="button" id="btn">搜索</button>
+    <ul id="list">
+
+    </ul>
+  </div>
+  <script>
+    let fruits = ["桃子", "苹果", "梨子", "香蕉", "香瓜", "葡萄", "柠檬", "橘子", "草莓"];
+    const param = document.getElementById('param');
+    const oBtn = document.getElementById('btn');
+    const oList = document.getElementById('list');
+
+
+    class Search {
+      constructor(data, param) {
+        this.data = data;
+        this.keyWord = param.value;
+        this.searchList = this.search(this.keyWord, this.data);
+      }
+      renderUi(list) {
+        if (list instanceof Array) {
+          let html = "";
+          list.map(function (i) {
+            html += `<li>${i}</li>`
+          })
+          oList.innerHTML = html;
+        }
+      }
+      search(keyword, data) {
+        if (data instanceof Array) {
+          let ret = [];
+          data.map(function (i) {
+            if (i.includes(keyword)) {
+              ret.push(i)
+            }
+          })
+          this.renderUi(ret);
+        }
+      }
+    }
+    let search = null;
+    oBtn.addEventListener('click', function () {
+      search = new Search(fruits, param)
+    })
+    param.addEventListener('keydown', function (e) {
+      if (e.keyCode == 13) {
+        search = new Search(fruits, param)
+      }
+    }, false);
+  </script>
+</body>
+
+</html>

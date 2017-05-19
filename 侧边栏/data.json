@@ -1,0 +1,105 @@
+[{
+  "name": "经营监控",
+  "id": 1,
+  "url": "baidu.com",
+  "children": [{
+      "name": "达成监控",
+      "id": 10,
+      "url": "baidu.com",
+      "children": [{
+          "name": "1",
+          "id": 10,
+          "url": "baidu.com"
+        }, {
+          "name": "2",
+          "id": 20,
+          "url": "baidu.com"
+        }, {
+          "name": "3",
+          "id": 30,
+          "url": "baidu.com"
+        }, {
+          "name": "4",
+          "id": 40,
+          "url": "baidu.com"
+        },
+        {
+          "name": "5",
+          "id": 50,
+          "url": "baidu.com"
+        }
+      ]
+    }, {
+      "name": "外部原因",
+      "id": 20,
+      "url": "baidu.com"
+    }, {
+      "name": "商品结构",
+      "id": 30,
+      "url": "baidu.com"
+    }, {
+      "name": "补货评估",
+      "id": 40,
+      "url": "baidu.com"
+    },
+    {
+      "name": "会员分析",
+      "id": 50,
+      "url": "baidu.com"
+    }
+  ]
+}, {
+  "name": "经营监控",
+  "id": 1,
+  "url": "baidu.com",
+  "children": [{
+      "name": "达成监控",
+      "id": 10,
+      "url": "baidu.com",
+      "children": [{
+          "name": "1",
+          "id": 10,
+          "url": "baidu.com"
+        }, {
+          "name": "2",
+          "id": 20,
+          "url": "baidu.com"
+        }, {
+          "name": "3",
+          "id": 30,
+          "url": "baidu.com"
+        }, {
+          "name": "4",
+          "id": 40,
+          "url": "baidu.com"
+        },
+        {
+          "name": "5",
+          "id": 50,
+          "url": "baidu.com"
+        }
+      ]
+    }, {
+      "name": "外部原因",
+      "id": 20,
+      "url": "baidu.com"
+    }, {
+      "name": "商品结构",
+      "id": 30,
+      "url": "baidu.com"
+    }, {
+      "name": "补货评估",
+      "id": 40,
+      "url": "baidu.com"
+    },
+    {
+      "name": "会员分析",
+      "id": 50,
+      "url": "baidu.com"
+    }
+  ]
+},{
+  "name": "经营监控",
+  "id": 1,
+  "url": "baidu.com"
+}]

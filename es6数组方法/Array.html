@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 去重
+    removeOdd([1, 2, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 10])
+
+    function removeOdd(list) {
+      if (list instanceof Object) {
+        list = Array.from(list);
+      }
+      if (list instanceof Array) {
+        let ret = new Set(list);
+        return ret;
+      }
+    }
+
+    // 去除指定
+    remove([1, 2, 3, 4, 2], 2)
+
+    function remove(arr, item) {
+      arr.map((i, m) => {
+        if (i === item) {
+          arr[m] = ""
+        }
+      })
+    }
+
+    // 求和
+    function sum(arr) {
+      let ret = 0;
+      arr.map(function (i) {
+        ret += i;
+      })
+      return ret;
+    }
+
+    // 超找元素位置
+    indexOf([1, 2, 3, 4], 3);
+
+    function indexOf(arr, item) {
+      return arr.indexOf(item);
+    }
+
+    // 移除数组中的元素
+    removeWithoutCopy([1, 2, 2, 3, 4, 2, 2], 2);
+
+    function removeWithoutCopy(arr, item) {
+      arr.map(function (arr, item) {
+
+      })
+    }
+    // 向末尾增加一个元素,不改变现有数组
+    append([1, 2, 3, 4], 10);
+
+    function append(arr, item) {
+      let ret = [...arr, item]
+      return ret;
+    }
+
+    // 删除最后一个元素,不改变原数组
+    truncate([1, 2, 3, 4])
+
+    function truncate(arr) {
+      let ret = arr.slice(0);
+      ret.pop();
+      return ret;
+    }
+
+    // 在数组 arr 开头添加元素 item。不要直接修改数组 arr，结果返回新的数组 
+    prepend([1, 2, 3, 4], 10)
+
+    function prepend(arr, item) {
+      return [item, ...arr]
+    }
+
+    // 删除数组 arr 第一个元素。不要直接修改数组 arr，结果返回新的数组 
+    curtail([1, 2, 3, 4])
+
+    function curtail(arr) {
+      return arr.slice(1)
+    }
+    // 合并数组 arr1 和数组 arr2。不要直接修改数组 arr，结果返回新的数组 
+    concat([1, 2, 3, 4], ['a', 'b', 'c', 1]);
+
+    function concat(arr1, arr2) {
+      return [...arr1, ...arr2]
+    }
+
+    // 在数组 arr 的 index 处添加元素 item。 不要直接修改数组 arr， 结果返回新的数组
+    insert([1, 2, 3, 4], 'z', 2)
+
+    function insert(arr, item, index) {
+      let ret;
+      arr.map((i, m) => {
+        if (i === index) {
+          ret = [...arr.slice(0, i), item, ...arr.slice(i)];
+        }
+      })
+      return ret;
+    }
+
+    // 统计数组 arr 中值等于 item 的元素出现的次数
+    count([1, 2, 4, 4, 3, 4, 3], 4);
+
+    function count(arr, item) {
+      let ret = 0;
+      arr.map(function (i) {
+        if (i === item) {
+          ret++
+        }
+      })
+      return ret
+    }
+
+    // 找出数组 arr 中重复出现过的元素
+    duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3]);
+
+    function duplicates(arr) {
+      let ret = [];
+      arr.map(function (i, index, arr) {
+        if (arr.includes(i, index + 1) && !ret.includes(i)) {
+          ret.push(i)
+        }
+      })
+      return ret;
+    }
+
+    // 在数组 arr 中，查找值与 item 相等的元素出现的所有位置 
+    findAllOccurrences('abcdefabc'.split(''), 'a').sort();
+
+    function findAllOccurrences(arr, target) {
+      let ret = [];
+      arr.map(function (i, index) {
+        while (i === target) {
+          ret.push(index)
+          return
+        }
+      })
+      return ret;
+    }
+
+    // 实现函数 functionFunction， 调用之后满足如下条件：
+    // 1、 返回值为一个函数 f
+    // 2、 调用返回的函数 f， 返回值为按照调用顺序的参数拼接， 拼接字符为英文逗号加一个空格， 即 ', '
+    // 3、 所有函数的参数数量为 1， 且均为 String 类型
+
+    function functionFunction(str) {
+      function f(s) {
+        return str + ',' + s;
+      }
+      return f;
+    }
+    functionFunction('Hello')('world')
+
+    // 实现函数 makeClosures， 调用之后满足如下条件：
+    // 1、 返回一个函数数组 result， 长度与 arr 相同
+    // 2、 运行 result 中第 i 个函数， 即 result[i]()， 结果与 fn(arr[i]) 相同
+    var arr = [1, 4, 6];
+    var square = function (x) {
+      return x * x;
+    };
+    var funcs = makeClosures(arr, square);
+
+    function makeClosures(arr, fn) {
+      let ret = [];
+      arr.map((i, index, arr) => {
+        ret[index] = () => {
+          return fn(arr[index])
+        }
+      })
+      return ret;
+    }
+  </script>
+</body>
+
+</html>
