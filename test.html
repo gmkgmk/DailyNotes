@@ -7,15 +7,117 @@
 </head>
 
 <body>
+  <div id="app">
+    <input type="text" v-model="name">
+    <div v-text="name"></div>
+    <div v-text="name"></div>
+    <input type="text" v-model="email">
+    <div v-text="email"></div>
+    <div v-text="email"></div>
+  </div>
+  <script>
+    var x = 10;
+
+    function foo() {
+      var y = x + 5;
+      return y;
+    }
+
+    function bar() {
+      var x = 2;
+      return foo();
+    }
+
+    function main() {
+      console.log(foo());
+      console.log(bar());
+      return 0;
+    }
+    main()
+
+    for (var i = 0; i < 5; i++) {
+      (function (i) {
+        setTimeout(function () {
+          console.log(i)
+        }, 100)
+      })(i)
+    }
+  </script>
+  <script>
+    /*
+     * vue使用的是es5的Object.defineProperty();
+     * */
+    function Vue(option) {
+      this.$option = option;
+      var $option = this.$option;
+      var dom = document.querySelector($option.el);
+      observe(dom, $option.data);
+    }
+
+    function observe(dom, obj) {
+      for (property in obj) {
+        watcher(dom, property);
+      }
+    }
+
+    function watcher(dom, vModel) {
+      var model = dom.querySelectorAll('[v-model=' + '"' + vModel + '"' + ']')[0];
+      console.log(model)
+      var obj = new Object();
+      Object.defineProperty(obj, vModel, {
+        set: function (newVal) {
+          compile(dom, newVal, vModel);
+        },
+        get: function () {
+          console.log("get");
+        }
+      });
+      model.addEventListener('change', function () {
+        obj[vModel] = this.value;
+      })
+    }
+
+    function compile(dom, value, vModel) {
+      console.log(dom, value, vModel)
+      var modelList = dom.querySelectorAll('[v-text=' + '"' + vModel + '"' + ']');
+      console.log(modelList)
+      modelList.forEach(function (item) {
+        item.innerHTML = value;
+      });
+    }
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        name: "",
+        email: ""
+      }
+    });
+  </script>
+  <script>
+    function _bind() {
+      var model = document.querySelectorAll('[ng-model="name"]')[0];
+      model.addEventListener('change', function () {
+        evaluate(this.value);
+      }, false);
+    }
+
+    function evaluate(value) {
+      var modelList = document.querySelectorAll('[ng-bind="name"]');
+      modelList.forEach(function (item) {
+        console.log(item)
+        console.log(value)
+        item.innerHTML = value;
+      });
+    }
+    // _bind();
+  </script>
   <script>
     function validator(target, validator, errorMsg) {
-      console.log(target, validator, errorMsg)
       return new Proxy(target, {
         _validator: validator,
         set(target, key, value, proxy) {
           let errMsg = errorMsg;
           if (value == "") {
-            console.log(`${errMsg[key]}`)
             return target[key] = false;
           }
         }
@@ -43,15 +145,14 @@
     }
     const vali = validator({}, validators, errorMsg)
 
-    console.log(vali)
 
 
     let registerForm = document.querySelector('#registerForm');
-    registerForm.addEventListener('submit', function () {
-      let validatorNext = function* () {
-        yield vali.name = registerForm.userName.value
-      }
-    }, false)
+    // registerForm.addEventListener('submit', function () {
+    //   let validatorNext = function* () {
+    //     yield vali.name = registerForm.userName.value
+    //   }
+    // }, false)
   </script>
 </body>
 
