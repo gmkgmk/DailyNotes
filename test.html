@@ -7,14 +7,57 @@
 </head>
 
 <body>
-  <div id="app">
-    <input type="text" v-model="name">
-    <div v-text="name"></div>
-    <div v-text="name"></div>
-    <input type="text" v-model="email">
-    <div v-text="email"></div>
-    <div v-text="email"></div>
-  </div>
+  <script>
+    // const censor = words => {
+    //   const filtered = [];
+    //   console.log(words)
+    //   for (let i = 0, {
+    //       length
+    //     } = words; i < length; i++) {
+    //     console.log(length)
+    //     const word = words[i];
+    //     if (word.length !== 4) filtered.push(word);
+    //   }
+    //   return filtered;
+    // };
+    // censor(['oops', 'gasp', 'shout', 'sun']);
+
+    var color = 'blue';
+
+    function changeColor() {
+      var anotherColor = 'red';
+
+      function swapColors() {
+        var tempColor = anotherColor;
+        anotherColor = color;
+        color = tempColor;
+      }
+
+      swapColors();
+    }
+
+    changeColor();
+
+    var m = {
+      a: 10,
+      b: 20
+    }
+    var n = m;
+    n.a = 15;
+
+     c = 2
+    function a() {
+      c++
+    }
+
+    function b() {
+      var c = 1;
+      a();
+      console.log(c)
+    }
+
+    b();
+  </script>
   <script>
     var x = 10;
 
@@ -33,15 +76,7 @@
       console.log(bar());
       return 0;
     }
-    main()
-
-    for (var i = 0; i < 5; i++) {
-      (function (i) {
-        setTimeout(function () {
-          console.log(i)
-        }, 100)
-      })(i)
-    }
+    // main()
   </script>
   <script>
     /*
@@ -85,13 +120,13 @@
         item.innerHTML = value;
       });
     }
-    var vm = new Vue({
-      el: '#app',
-      data: {
-        name: "",
-        email: ""
-      }
-    });
+    // var vm = new Vue({
+    //   el: '#app',
+    //   data: {
+    //     name: "",
+    //     email: ""
+    //   }
+    // });
   </script>
   <script>
     function _bind() {
