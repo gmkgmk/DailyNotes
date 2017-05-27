@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>tab组件</title>
+  <link rel="stylesheet" href="style/index.css">
+</head>
+
+<body>
+
+
+  <script src="dist/main.bundle.js"></script>
+  <script>
+    let tabComponents = new MyTabs({
+      hander: "click",
+      status: 2,
+      controlTitle: ["选项一", "选项二", "选项三"],
+      body: [{
+        type: "img",
+        src: "img/tab1_1.jpg",
+        Class: "1",
+        describe: "hah"
+      }, {
+        type: "text",
+        Class: "tabsText",
+        inner: 'JavaScript语言规定，对象的键名一律为字符串，所以，数组的键名其实也是字符串。之所以可以用数值读取，是因为非字符串的键名会被转为字符串。'
+      }, {
+        type: "div",
+        Class: "tavbDiv",
+        inner: `<button>提交</button><input type='text'value='' style='width:300px;'>`
+      }]
+    });
+  </script>
+</body>
+
+</html>

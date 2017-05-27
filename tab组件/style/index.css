@@ -1,0 +1,58 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #999;
+}
+ul li,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+p {
+  padding: 0;
+  margin: 0;
+}
+.G_tab .tab-header li {
+  float: left;
+  line-height: 30px;
+  background: #6d6d6d;
+  margin-right: 5px;
+}
+.G_tab .tab-header .active {
+  background: #fff;
+}
+.G_tab .tab-header .active a {
+  color: #000;
+}
+.G_tab .tab-header a {
+  color: #fff;
+  display: block;
+  padding: 5px 10px;
+}
+.G_tab .tab-body {
+  width: 480px;
+  height: auto;
+  margin-top: 5px;
+  border: 10px solid #fff;
+  clear: both;
+}
+.G_tab .tab-body li {
+  display: none;
+}
+.G_tab .tab-body li img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.G_tab .tab-body .active {
+  display: block;
+}
+.G_tab .tab-body .text {
+  background: #1abc9c;
+  font-size: 18px;
+  color: #555;
+}

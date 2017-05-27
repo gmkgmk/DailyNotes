@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+
+<body>
+  <form id="myForm" name="myForm">
+    <div>
+      <label for="username">Enter name:</label>
+      <input type="text" id="username" name="username">
+    </div>
+    <div>
+      <label for="useracc">Enter account number:</label>
+      <input type="text" id="useracc" name="useracc">
+    </div>
+    <div>
+      <label for="userfile">Upload file:</label>
+      <input type="file" id="userfile" name="userfile">
+    </div>
+    <input type="submit" value="Submit!">
+  </form>
+  <script>
+    var myForm = document.getElementById('myForm');
+    formData = new FormData(myForm);
+    formData.append('username', 'Chris');
+    console.log(formData)
+  </script>
+</body>
+
+</html>
