@@ -8,26 +8,30 @@
 </head>
 
 <body>
-  <form id="myForm" name="myForm">
-    <div>
-      <label for="username">Enter name:</label>
-      <input type="text" id="username" name="username">
-    </div>
-    <div>
-      <label for="useracc">Enter account number:</label>
-      <input type="text" id="useracc" name="useracc">
-    </div>
-    <div>
-      <label for="userfile">Upload file:</label>
-      <input type="file" id="userfile" name="userfile">
-    </div>
-    <input type="submit" value="Submit!">
-  </form>
+  <div id="box">
+    <P>1</P>
+    <P>2</P>
+    <P>3</P>
+    <P>4</P>
+    <P>5</P>
+    <P>6</P>
+    <P>7</P>
+    <P>8</P>
+    <P>9</P>
+    <P>10</P>
+  </div>
   <script>
-    var myForm = document.getElementById('myForm');
-    formData = new FormData(myForm);
-    formData.append('username', 'Chris');
-    console.log(formData)
+    var myObject = {
+      name: 'sven',
+    };
+    myObject.prototype = {
+      getName: function () {
+          console.log(this)
+      }
+    }
+    console.log(myObject.prototype)
+ 
+    console.log(myObject.prototype.getName())
   </script>
 </body>
 
