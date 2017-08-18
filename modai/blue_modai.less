@@ -1,0 +1,99 @@
+@name:bound;
+.boundingBox {
+    // 遮挡层为9000
+    z-index: 10000;
+    background-color: #fff;
+    -webkit-background-clip: content;
+    box-shadow: 1px 1px 50px rgba(0,0,0,.3);
+    border-radius: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+    animation-name: boundIn;
+    .@{name}_header {
+        @headerHeight:42px;
+        padding: 0 80px 0 20px;
+        height:  @headerHeight;
+        line-height: @headerHeight;
+        border-bottom: 1px solid #ddd;
+        font-size: 16px;
+        color: #333;
+        overflow: hidden;
+        background-color: #F8F8F8;
+        border-radius: 2px 2px 0 0;
+        cursor: move;
+    } 
+    .@{name}_body {
+        padding: 20px 20px 20px 55px;
+        text-align: left;
+        font-size: 14px;
+    }
+    .@{name}_closeBtn {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background-size: 10px 10px;
+        background: url("./close.png") no-repeat 50%;
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: auto;
+        border-color: #4898d5;
+        color: #aaa;
+        pointer-events: auto;
+        &:hover{
+              opacity: .8;
+            text-decoration: none;
+        }
+    }
+    .@{name}_btn{
+        @btnH:30px;
+        position: absolute;
+        width: 100px;
+        cursor: pointer;
+        height:   @btnH;
+        text-align: center;
+        line-height:  @btnH; 
+         border-color: #4898d5;
+        background-color: #2e8ded;
+        border-radius: 2px;
+        color: #fff;
+         &:hover{
+              opacity: .8;
+            text-decoration: none;
+        }
+    }
+     .alertBtn {
+        bottom: 10px;
+        left: 50%;
+        margin-left: -50px;
+    }
+}
+.box_layer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.3;
+    // 探出层为10000
+    z-index: 9000;
+}
+
+@keyframes boundIn{
+0% {
+    opacity: 0;
+    -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
+    transform: scale(.5);
+}
+
+100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>命令模式-菜单模式</title>
+</head>
+
+<body>
+  <button type="button" id="button1">点击按钮1</button>
+  <button type="button" id="button2">点击按钮2</button>
+  <button type="button" id="button3">点击按钮3</button>
+  <script>
+    var button1 = document.getElementById("button1");
+    var button2 = document.getElementById("button2");
+    var button3 = document.getElementById("button3");
+
+    // 命令模式的由来，其实是回调（ callback ）函数的一个面向对象的替代品。
+
+    // 控制
+    var setCommand = function (button, func) {
+      button.onclick = function () {
+        func();
+      }
+    } 
+    // 设置动作
+    var MenuBar = {
+      refresh: function () {
+        console.log("刷新菜单登陆")
+      }
+    }
+
+    var SubMenu = {
+      add: function () {
+        console.log("增加子菜单");
+      },
+      del: function () {
+        console.log("删除子菜单");
+      }
+    }
+
+    // 设置规则
+    var RefreshMenuBarCommand = function (receiver) {
+      return function () {
+        receiver.refresh();
+      }
+    }
+
+    var AddSubMenuCommand = function (receiver) {
+      return function () {
+        receiver.add();
+      }
+    }
+    var DelSubMenuCommand = function (receiver) {
+      return function () {
+        receiver.del();
+      }
+    }
+
+    // 将动作和规则联系起来生成事件
+    var refreshMenuBarCommand = RefreshMenuBarCommand(MenuBar);
+    var addSubMenuCommand = AddSubMenuCommand(SubMenu);
+    var delSubMenuCommand = DelSubMenuCommand(SubMenu);
+
+    // 将事件和按钮联系起来
+    setCommand(button1, refreshMenuBarCommand);
+    setCommand(button2, addSubMenuCommand);
+    setCommand(button3, delSubMenuCommand);
+  </script>
+</body>
+
+</html>

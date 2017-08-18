@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>享元模式1-初识享元模式</title>
+</head>
+
+<body>
+  <p>享元（flyweight）模式是一种用于性能优化的模式，“fly”在这里是苍蝇的意思，意为蝇量 级。享元模式的核心是运用共享技术来有效支持大量细粒度的对象
+  </p>
+  <p>如果系统中因为创建了大量类似的对象而导致内存占用过高，享元模式就非常有用了。在 JavaScript 中，浏览器特别是移动端的浏览器分配的内存并不算多，如何节省内存就成了一件非 常有意义的事情
+  </p>
+
+  <script>
+    /*
+     *假设有个内衣工厂，目前的产品有 50种男式内衣和 50种女士内衣，为了推销产品，工厂决
+     * 定生产一些塑料模特来穿上他们的内衣拍成广告照片。 正常情况下需要 50 个男模特和 50 个女
+     *模特，然后让他们每人分别穿上一件内衣来拍照。不使用享元模式的情况下，在程序里也许会这
+     * 样写
+     */
+
+    var Model = function (sex, underwear) {
+      this.sex = sex;
+    };
+
+    Model.prototype.takePhoto = function () {
+      console.log('sec = ' + this.sex + 'underwear=' + this.underwear);
+    };
+    var maleModel = new Model('male'),
+      femaleModel = new Model('female');
+
+    for (var i = 1; i <= 50; i++) {
+        maleModel.underwear = 'underwear' + i;
+        maleModel.takePhoto();
+    }
+    for (var j = 1; j <= 50; j++) {
+      femaleModel.underwear = 'underwear' + j;
+      femaleModel.takePhoto();
+    }
+  </script>
+</body>
+
+</html>

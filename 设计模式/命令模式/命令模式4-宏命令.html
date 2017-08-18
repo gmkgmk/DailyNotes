@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>命令模式-宏命令</title>
+</head>
+
+<body>
+  <script>
+    var closeDoorCommand = {
+      execute: function () {
+        console.log("关门")
+      }
+    };
+
+    var openPcCommand = {
+      execute: function () {
+        console.log("关电脑")
+      }
+    }
+
+    var openQQCommand = {
+      execute: function () {
+        console.log("登陆QQ")
+      }
+    }
+
+    var MainCommand = function () {
+      return {
+        commandsList: [],
+        add: function (command) {
+          this.commandsList.push(command)
+        },
+        execute: function () {
+          for (var i = 0, command; command = this.commandsList[i++];) {
+            command.execute();
+          }
+        }
+      }
+    }
+
+    var mainCommand = MainCommand();
+    mainCommand.add(closeDoorCommand);
+    mainCommand.add(openPcCommand);
+    mainCommand.add(openQQCommand);
+    mainCommand.execute();
+  </script>
+</body>
+
+</html>

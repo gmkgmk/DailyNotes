@@ -1,0 +1,45 @@
+    .caution p {
+      padding: 4px 8px;
+      position: absolute;
+      left: 30px;
+      top: 20px;
+      background: rgba(50, 50, 50, 0.1);
+      min-width: 180px;
+      margin: 0;
+      display: none;
+    }
+
+    .caution {
+      position: relative;
+      width: auto;
+      height: auto;
+    }
+
+    .tips-p {
+      border-radius: 5px;
+      font-size: 12px;
+    }
+
+    .caution:hover .tips-p {
+      display: block;
+    }
+
+    .caution:hover {
+      cursor: pointer;
+    }
+
+    .caution img {
+      width: 100%;
+    }
+
+    .caution .tips_icon {
+      height: 12px;
+      width: 12px;
+      display: inline-block;
+      background-size: 100%;
+      background-image: url("./tips_icon.png");
+    }
+
+    .caution.active .tips_icon {
+      background-image: url("./tips_icon_active.png")
+    }

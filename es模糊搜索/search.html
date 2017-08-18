@@ -74,9 +74,15 @@
     }
     let search = null;
     oBtn.addEventListener('click', function () {
+      if(search){
+        search = null;
+      }
       search = new Search(fruits, param)
     })
     param.addEventListener('keydown', function (e) {
+      if(search){
+        search = null;
+      }
       if (e.keyCode == 13) {
         search = new Search(fruits, param)
       }

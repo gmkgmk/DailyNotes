@@ -4,77 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <style>
-    .caution p {
-      width: auto;
-      height: auto;
-      padding: 15px;
-      position: absolute;
-      left: 25px;
-      top: 10px;
-      background: #ddd;
-      min-width: 140px;
-      margin: 0;
-      display: none;
-    }
-
-    .caution .fa {
-      width: 20px;
-      height: 20px;
-      display: block;
-      text-align: center;
-      line-height: 20px;
-      cursor: pointer;
-      
-    }
-
-    .caution {
-      padding: 5px;
-      position: relative;
-      float: left;
-    }
-    .caution-p{
-      border-radius: 5px;
-      font-size: 12px;
-    }
-    .caution:hover .caution-p {
-      display: block;
-    }
-
-    .caution:hover .fa {
-      color: blue;
-    }
-  </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
 </head>
 
 <body>
-  <div id="box"></div>
+  <div class="tips_box"></div>
+  <div class="tips_box1"></div>
+  <div class="tips_box2"></div>
+  <script src="./bluest_tips/bluest_tips.js"></script>
   <script>
-    (function () {
-      var tips = function (box, html) {
-        this.box = box ? document.getElementById(box) : body
-        this.render(html);
-      }
-      tips.prototype = {
-        render: function (html) {
-          this.renderUi(html);
-        },
-        renderUi: function (html) {
-          var html = '<aside class="caution">' +
-            '<i class="fa fa-exclamation" aria-hidden="true"></i>' +
-            '<p class="caution-p">' +
-            html +
-            '</p>' +
-            '</aside>'
-          console.log(this.box)
-          this.box.innerHTML = html;
-        }
-      }
-      var tip = new tips("box","关于学习的问题!");
-
-    })(window)
+    var tips = new Tips(".poptip");
+    tips.setDom(".tips_box", "中华人民共和国")
+    tips.setDom(".tips_box1", "中华人民共和国1")
+    tips.setDom(".tips_box2", "中华人民共和国2")
   </script>
 </body>
 

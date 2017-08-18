@@ -290,3 +290,23 @@ alert ( [ i, n ] );
 来替代传统的发布 — 订阅模式。
 
 发布 — 订阅模式的优点非常明显，一为时间上的解耦，二为对象之间的解耦。
+
+
+##五:命令模式;
+命令模式最常见的应用场景是：有时候需要向某些对象发送请求，但是并不知道请求的接收者是谁，也不知道被请求的操作是什么。
+此时希望用一种松耦合的方式来设计程序，使得请求发送者和请求接收者能够消除彼此之间的耦合关系。
+用闭包实现方法
+var RefreshMenuBarCommand = function( receiver ){
+      return {
+        execute: function(){
+        receiver.refresh();
+      }
+    }
+  }
+var setCommand = function( button, command ){
+  button.onclick = function(){
+    command.execute();
+}
+};
+var refreshMenuBarCommand = RefreshMenuBarCommand( MenuBar );
+setCommand( button1, refreshMenuBarCommand )
