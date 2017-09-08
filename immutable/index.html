@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>immutable</title>
+</head>
+
+<body>
+  <script src="./immutable.js"></script>
+  <script>
+    const a = Immutable.fromJS([1, 2])
+
+    const b = Immutable.fromJS({
+      a: 1
+    })
+    const d = Immutable.is(a, b)
+
+    console.log(a)
+    console.log(b)
+    console.log(d)
+  </script>
+</body>
+
+</html>

@@ -6,6 +6,7 @@
   var Tips = function () {
     this.box = "";
     this.dataTips = "data-tips";
+    this.obj = {}; //这个可以写默认配置
     this.init();
   }
   Tips.prototype = {
@@ -15,7 +16,7 @@
       this.box.innerHTML = "";
       document.body.appendChild(this.box);
     },
-    setDom: function (dom, html) {
+    setDom: function (dom, html, obj) {
       // 设置每个dom和需要显示的提示字
       var element = dom ? document.querySelector(dom) : body
       var ret = '<aside class="caution">' +
@@ -23,7 +24,13 @@
         '</aside>'
       element.innerHTML = ret || "";
       // 将需要提示的字写到dom上
-      element.setAttribute(this.dataTips, html)
+      element.setAttribute(this.dataTips, html);
+
+      if (!(obj == null)) {
+        this.obj = obj; //空了后改成继承
+      }else{
+        this.obj = {}; //空了后改成继承
+      }
       this.bindUi()
     },
     bindUi: function () {
@@ -51,8 +58,10 @@
     setElementPosition: function (element) {
       if (element.getBoundingClientRect) {
         var rect = element.getBoundingClientRect();
-        this.box.style.left = rect.left + 20 + "px";
-        this.box.style.top = rect.top + 20 + "px";
+        var left = this.obj.left || rect.left + 20 + "px";
+        var top = this.obj.top || rect.top + 20 + "px";
+        this.box.style.left = left;
+        this.box.style.top = top;
         this.box.style.display = "block";
       }
     }

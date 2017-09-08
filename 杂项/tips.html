@@ -4,18 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
+  <style>
+  .tips_box{
+    float: right
+  }
+  .tips_box1{
+    float: left
+  }
+
+  </style>
 </head>
 
 <body>
   <div class="tips_box"></div>
   <div class="tips_box1"></div>
-  <div class="tips_box2"></div>
   <script src="./bluest_tips/bluest_tips.js"></script>
   <script>
-    var tips = new Tips(".poptip");
+    var tips = new Tips("");
+    console.log(tips)
     tips.setDom(".tips_box", "中华人民共和国")
     tips.setDom(".tips_box1", "中华人民共和国1")
-    tips.setDom(".tips_box2", "中华人民共和国2")
   </script>
 </body>
 
