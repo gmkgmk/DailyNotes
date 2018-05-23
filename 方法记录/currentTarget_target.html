@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 200px;
+      height: 200px;
+    }
+    .btn {
+      width: 100px;
+      height: 100px;
+      background: #ddd;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='box'>
+    <div class="btn">这是一个按钮</div>
+    <div class="abc">这是一个按钮</div>
+  </div>
+  <script>
+    const box = document.querySelector(".box")
+    const btn = document.querySelector(".btn")
+    box.addEventListener('click',function(event){
+      // 1.currentTarget是绑定事件的对象
+      // 1.target是触发事件的对象
+      console.log(event.currentTarget) 
+      console.log(event.target)
+    })
+  </script>
+</body>
+
+</html>

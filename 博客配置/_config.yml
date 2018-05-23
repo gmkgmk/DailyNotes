@@ -1,0 +1,109 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: GoogWin的博客
+subtitle: 前端小白练级路
+description: 才入行的小前端,写写工作记录.
+author: GoogWin
+email: 18408271384@sina.cn
+keywords: 前端,node,react,react-native,koa2,react-native,前端学习
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: http://www.gmkgmk.com
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+tag_dir: tags
+archive_dir: archives
+
+# Directory
+source_dir: source
+public_dir: public
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Archives
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+archive: 1
+category: 1
+tag: 1
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 8
+pagination_dir: page
+
+# ExtensionsExtensions
+## Plugins: https://hexo.io/plugins/
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20
+## Themes: https://hexo.io/themes/
+theme: yilia
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+ - type: git
+   repo: git@www.gmkgmk.com:blog.git
+   branch: master
+ - type: git
+   repo: https://github.com/gmkgmk/gmk_blog.github.io.git
+   branch: master
+  
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true

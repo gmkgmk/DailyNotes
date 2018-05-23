@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数记忆</title>
+</head>
+
+<body>
+  <script>
+    function memoize(f) {
+      var cache = {};
+      return function () {
+        var key = arguments.length + Array.prototype.join.call(arguments, ",")
+        if (key in cache) {
+          return cache[key]
+        } else {
+          return cache[key] = f.apply(this, arguments)
+        }
+      }
+    }
+
+    var add = function (a, b, c) {
+      return a + b + c
+    }
+
+    var memoizedAdd = memoize(add)
+
+    memoizedAdd(1, 2, 3)
+    memoizedAdd(1, 2, 3)
+
+    for (var i = 0; i < 10; i++) {
+      (function (i) {
+        setTimeout(function (i) {
+          console.log(i)
+        }, 1000 * i, i)
+      })(i)
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>hello</h2>
+  <script>
+    function printH2() {
+      console.log("frist script ", document.querySelectorAll("h2"));
+    }
+    printH2()
+    setTimeout(printH2)
+  </script>
+  <!-- <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.4/css/bootstrap.css"> -->
+  <h2>World</h2>
+  <script>
+    console.log('second script');
+  </script>
+</body>
+
+</html>

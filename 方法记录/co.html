@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function co(gen) {
+      var ctx = this;
+      if (typeof gen === 'function') getn = gen.call(this);
+
+      return new Promise(function (resolve, reject) {
+
+        onFulfilled();
+
+        function onFulfilled(res) {
+          var ret;
+          try {
+            ret = gen.next(res);
+          } catch (e) {
+            return reject(e);
+          }
+
+          next(ret);
+        }
+
+        function next(ret) {
+          if (ret.done) return resolve(ret.value);
+
+          var value = toPromise.call(ctx, ret, value);;
+
+          if (value && isPromise.call(value)) return value.then(onFulfilled, onRejected);
+
+          return onRejected(new TypeError("You may only yeild a function promise, generator, array, or object" + "but the following object was passd:" + String(ret.value)));
+
+        }
+      })
+    }
+
+    function isPromise(obj) {
+      return 'function' == typeof obj.then;
+    }
+  </script>
+</body>
+
+</html>

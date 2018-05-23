@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>symbol测试</title>
+</head>
+
+<body>
+  <script>
+    let hasLengthOf10 = {
+      [Symbol.match]: function (value) {
+        return value.length === 10 ? [value.substring(0, 10)] : null;
+      },
+      match:function(val){
+        console.log(val)
+      }
+    }
+
+    let message1 = 'Hello world',
+      message2 = 'Hello John';
+
+    let match1 = message1.match(hasLengthOf10);
+    let match2 = message2.match(hasLengthOf10);
+    console.log(match1)
+    console.log(match2)
+
+
+  </script>
+</body>
+
+</html>

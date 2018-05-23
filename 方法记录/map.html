@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>map</title>
+</head>
+
+<body>
+  <script>
+    let map = new Map([['name', 'Nicholas'], ['age', 12]]);
+  </script>
+  <script>
+    var Person = (function () {
+      var privateData = {},
+        privateId = 0;
+      function Person(name) {
+        Object.defineProperty(this, "_id", { value: privateId++ });
+        console.log(this._id)
+        privateData[this._id] = {
+          name: name
+        }
+      }
+
+      Person.prototype.getName = function () {
+        return privateData[this._id].name
+      }
+
+      return Person;
+    }());
+    var person = new Person("小红");
+    var person1 = new Person("小刚");
+    console.log(person.getName())
+    console.log(person1.getName())
+  </script>
+</body>
+
+</html>

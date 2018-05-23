@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function simpleClone(initalObj) {
+      var obj = {};
+      for (var i in initalObj) {
+        obj[i] = initalObj[i];
+      }
+      return obj;
+    }
+
+    var obj = {
+      a: "hello",
+      b: {
+        a: "world",
+        b: 21
+      },
+      c: ["Bob", "Tom", "Jenny"],
+      d: function () {
+        console.log("hello world");
+      }
+    }
+    var cloneObj = simpleClone(obj);
+    console.log(cloneObj.b);
+    console.log(cloneObj.c);
+    console.log(cloneObj.d);
+
+    cloneObj.b.a = "changed";
+    cloneObj.c = [1, 2, 3];
+    cloneObj.d = function () { console.log("changed"); };
+    console.log(obj.b);
+    console.log(obj.c);
+    console.log(obj.d);
+  </script>
+</body>
+
+</html>

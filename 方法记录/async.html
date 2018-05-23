@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>ruanyifeng-async实现原理</title>
+</head>
+
+<body>
+  <h1>http://es6.ruanyifeng.com/#docs/async</h1>
+  <script>
+    // async function fn(args) {
+    //   // ...
+    //   console.log(1)
+    // }
+
+    // 等同于
+
+    function fn(args) {
+      return spawn(function* () {
+        // ...
+      });
+    }
+
+
+    // 自动执行器
+    function spawn(genF) {
+      return new Promise(function (resolve, reject) {
+        const gen = genF();
+        function step(nextF) {
+          let next;
+          try {
+            next = nextF();
+          } catch (e) {
+            return reject(e);
+          }
+          if (next.done) {
+            return resolve(next.value);
+          }
+          Promise.resolve(next.value).then(function (v) {
+            step(function () { return gen.next(v); });
+          }, function (e) {
+            step(function () { return gen.throw(e); });
+          });
+        }
+        step(function () { return gen.next(undefined); });
+      });
+    }
+    </script>
+</body>
+
+</html>

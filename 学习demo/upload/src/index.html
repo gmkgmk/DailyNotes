@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <form id="upload-form" action="localhost:3000/api/profile" method="post" enctype="multipart/form-data">
+
+    <input type="file" id="upload" name="avatar" />
+    <br />
+    <input type="button" value="Upload" id="button" />
+  </form>
+  <script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.js"></script>
+  <script>
+    const formData = () => {
+      var files = $('#upload').prop('files');
+      console.log(files)
+      const data = new FormData()
+      data.append('avatar', files[0]);
+      console.log(data)
+      $.ajax({
+        url: 'http://localhost:3000/api/profile',
+        type: 'POST',
+        cache: false,
+        data: data,
+        processData: false,
+        contentType: false
+      })
+        .success(function (data) {
+          console.log(data)
+        }).done(function (res) {
+        }).fail(function (res) { })
+    }
+    $("#button").on('click', () => formData())
+  </script>
+</body>
+
+</html>

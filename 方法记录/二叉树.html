@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>二叉树</title>
+</head>
+
+<body>
+  <script>
+    function BinaryTree() {
+      let BinaryNode = function (key) {
+        this.key = key;
+        this.leftSubtree = null;
+        this.rightSubtree = null;
+      }
+
+      // 生成二叉树
+      let root = null;
+      let insertNode = function (node, newNode) {
+        if (newNode.key < node.key) {
+          if (node.leftSubtree == null) {
+            node.leftSubtree = newNode;
+          } else {
+            insertNode(node.leftSubtree, newNode)
+          }
+        } else {
+          if (node.rightSubtree == null) {
+            node.rightSubtree = newNode;
+          } else {
+            insertNode(node.rightSubtree, newNode)
+          }
+        }
+      }
+
+      this.insert = function (key) {
+        var newNode = new BinaryNode(key);
+        if (root == null) {
+          root = newNode
+        } else {
+          insertNode(root, newNode)
+        }
+      }
+
+      var stack = [];
+      // 中序遍历
+      let orderWithMiddle = function (node) {
+        stack.push(node)
+        if (node !== null) {
+          orderWithMiddle(node.leftSubtree)
+          console.log(node)
+          orderWithMiddle(node.rightSubtree)
+        }
+      }
+      this.orderIn = function () {
+        orderWithMiddle(root)
+        console.log(stack)
+      }
+    }
+
+
+    var nodes = [8, 3, 10, 1, 6, 14, 4, 7, 13];
+    var binaryTree = new BinaryTree;
+    nodes.forEach(function (key) {
+      binaryTree.insert(key);
+    });
+    binaryTree.orderIn();
+
+  </script>
+</body>
+
+</html>

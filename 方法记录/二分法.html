@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+    {
+      tag: 'div',
+      attrs: { className: 'box', id: 'content'},
+      children: [
+        {
+          tag: 'div',
+          arrts: { className: 'title' },
+          children: ['Hello']
+        },
+        {
+          tag: 'button',
+          attrs: null,
+          children: ['Click']
+        }
+      ]
+    }
+</div>
+  <script>
+    function sortedIndex(array, obj) {
+
+      var low = 0, high = array.length;
+
+      while (low < high) {
+        console.log(low, high)
+        var mid = Math.floor((low + high) / 2);
+        if (array[mid] < obj) {
+          low = mid + 1
+          console.log("满足",low,high)
+        }
+        else {
+          console.log("不满足",low,high)
+          high = mid
+        };
+      }
+
+      return high;
+    };
+
+    console.log(sortedIndex([10, 20, 30, 40, 50], 35)) // 3
+  </script>
+</body>
+
+</html>

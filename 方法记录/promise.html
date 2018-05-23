@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>promise</title>
+</head>
+
+<body>
+  <script>
+    class PromiseSimple {
+      constructor(executionFunction) {
+        this.promiseStack = [];
+        this.handleError = () => { };
+
+        this.onResolve = this.onResolve.bind(this);
+        this.onReject = this.onReject.bind(this);
+
+        executionFunction(this.onResolve, this.onReject)
+      }
+
+      then(onResolve) {
+        this.promiseStack.push(onResolve);
+        console.log(this.promiseStack)
+        
+        return this;
+      }
+
+      catch(handleError) {
+        this.handleError = handleError;
+
+        return this;
+      }
+
+      onResolve(value) {
+        let storedValue = value;
+        try {
+          this.promiseStack.forEach(nextFunction => {
+            storedValue = nextFunction(storedValue);
+          })
+        } catch (error) {
+          this.promiseChain = [];
+
+          this.onReject(error);
+        }
+      }
+
+      onReject(error) {
+        this.handleError(error);
+      }
+    }
+
+
+    fakeApiBackend = () => {
+      const user = {
+        username: 'treyhuffine',
+        favoriteNumber: 42,
+        profile: 'www.baidu.com'
+      };
+
+      // Introduce a randomizer to simulate the
+      // the probability of encountering an error
+      if (Math.random() > .05) {
+        return user;
+      } else {
+        const error = {
+          statusCode: 404,
+          message: 'Could not find user',
+          error: 'Not Found',
+        };
+
+        return error;
+      }
+    };
+
+    const makeApiCall = () => {
+      return new PromiseSimple((resolve, reject) => {
+        // setTimeout(() => {
+        //   const apiResponse = fakeApiBackend();
+
+        //   if (apiResponse instanceof Error) {
+        //     reject(apiResponse);
+        //   } else {
+        //     console.log(1)
+        //     resolve(apiResponse);
+        //     console.log(2)
+        //   }
+        // }, 1000);
+      });
+    };
+
+    makeApiCall()
+      .then((user) => {
+        console.log('这是第一个函数.then()');
+
+        return user;
+      })
+      .then((user) => {
+        console.log(`用户 ${user.username}'最喜欢的数字是 ${user.favoriteNumber}`);
+
+        return user;
+      })
+      .then((user) => {
+        console.log('这个 .then() 告诉你最喜欢的数字后')
+
+        return user.profile;
+      })
+      .then((profile) => {
+        console.log(`他的网站地址是 ${profile}`);
+      })
+      .then(() => {
+        console.log('这是最后一次 then()');
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+      console.log(makeApiCall)
+  </script>
+</body>
+
+</html>

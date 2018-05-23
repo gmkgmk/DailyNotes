@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS3模拟IOS开关</title>
+    <style type="text/css" media="screen">
+       /* ==========================================================================
+                        设置根元素字体大小
+       ========================================================================== */
+        html {
+            font-size: 100px;
+        }
+        /* ==========================================================================
+                        设置模拟元素的包裹层,装饰...毫无卵用
+       ========================================================================== */
+       .ios-checkbox{
+           
+            display:-webkit-box;
+            display:-webkit-flex;
+            display:-ms-flexbox;
+            display:flex;
+            -webkit-box-orient:horizontal;
+            -webkit-box-direction:normal;
+            -webkit-flex-direction:column;
+                -ms-flex-direction:column;
+                    flex-direction:column;
+            -webkit-flex-wrap:nowrap;
+                -ms-flex-wrap:nowrap;
+                    flex-wrap:nowrap;
+            -webkit-justify-content:space-around;
+                -ms-flex-pack:distribute;
+                    justify-content:space-around;
+            -webkit-box-align:center;
+            -webkit-align-items:center;
+                -ms-flex-align:center;
+                    align-items:center;
+       }
+        /* ==========================================================================
+                    label标签模拟按钮         
+       ========================================================================== */
+        .emulate-ios-button {
+            display: block;
+            width: 2rem;
+            height: 1rem;
+            background: #ccc;
+            border-radius: 5rem;
+            cursor: pointer;
+            position: relative;
+            -webkit-transition: all .3s ease;
+            transition: all .3s ease;
+        }
+
+        /* ==========================================================================
+                    设置伪类,来实现模拟滑块滑动,过渡用了transition来实现 ,
+                    translateZ来强制启用硬件渲染   
+       ========================================================================== */
+
+        .emulate-ios-button:after {
+            content: '';
+            display: block;
+            width: .9rem;
+            height: .9rem;
+            border-radius: 100%;
+            background: #fff;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+            position: absolute;
+            left: .05rem;
+            top: .05rem;
+            -webkit-transform:translateZ(0);    
+            transform:translateZ(0);
+            -webkit-transition: all .3s ease;  
+            transition: all .3s ease;
+        }
+
+        .emulate-ios-button:active:after {
+            width: 1.1rem;
+        }
+
+      /* ==========================================================================
+                    设置raw-checkbox,视觉直观比较 
+       ========================================================================== */
+        .raw-checkbox{
+            height:2rem;
+            width:2rem;
+        }
+
+        .raw-checkbox:checked+label {
+            background: #34bf49;
+        }
+
+        /* 这里是伪元素偏移,初始是0.9+0.05 ,所以这里1.05rem */
+        .raw-checkbox:checked+label:after {
+            left: 1.05rem;
+        }
+
+        .raw-checkbox:checked+label:active:after {
+            left: .5rem;
+        }
+
+
+        .raw-checkbox:disabled+label {
+            background: #d5d5d5;
+            pointer-events: none;
+        }
+
+        .raw-checkbox:disabled+label:after {
+            background: #bcbdbc;
+        }
+        
+        .none{
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ios-checkbox">
+        <input type="checkbox" id="ios-checkbox" name="emulate-ios-button" class="raw-checkbox " >
+        <label for="ios-checkbox" class="emulate-ios-button"></label>
+    </div>
+</body>
+
+</html>

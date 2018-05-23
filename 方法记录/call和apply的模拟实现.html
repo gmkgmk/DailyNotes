@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Call和apply的实现</title>
+</head>
+
+<body>
+  <!-- Call的实现  -->
+  <script>
+    Function.prototype.call2 = function (context) {
+      content = context || window;
+      context.fn = this;
+      var args = [];
+      for (var i = 1, len = arguments.length; i < len; i++) {
+        args.push('arguments[' + i + ']');
+      }
+
+      var result = eval('context.fn(' + args + ')')
+
+      delete context.fn;
+      return result;
+    }
+
+    var value = 2;
+
+    var obj = {
+      value: 1
+    }
+
+    function bar(name, age) {
+      console.log(this.value);
+      return {
+        value: this.value,
+        name: name,
+        age: age
+      }
+    }
+
+    bar.call(null); // 2
+    console.log(bar.call2(obj, 'kevin', 18));
+    // 1
+    // Object {
+    //    value: 1,
+    //    name: 'kevin',
+    //    age: 18
+    // }
+  </script>
+  <!-- apply的实现 -->
+  <script>
+    Function.prototype.apply2 = function (context, arr) {
+      context = Object(context) || window;
+      context.fn = this;
+
+      var result;
+      if (!arr) {
+        result = context.fn();
+      }
+      else {
+        var args = [];
+        for (var i = 0, len = arr.length; i < len; i++) {
+          args.push('arr[' + i + ']');
+        }
+        result = eval('context.fn(' + args + ')')
+      }
+
+      delete context.fn;
+      return result;
+    }
+  </script>
+</body>
+
+</html>

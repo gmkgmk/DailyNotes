@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>会员详情</title>
+  <script src="../static/js/rem.js"></script>
+  <link rel="stylesheet" href="../static/style/reset.css">
+  <link rel="stylesheet" href="../static/style/regin.css">
+  <link rel="stylesheet" href="../static/style/swich.css">
+  <link rel="stylesheet" href="../static/style/question.css">
+
+</head>
+
+<body>
+  <main>
+    <section class="container">
+      <header class="header">
+        <div>
+          会员信息
+        </div>
+      </header>
+      <div class="from-box">
+        <article class="item item-input">
+          <span class="item-prefix">
+            中文名:</span>
+          <div class="item-content">
+            <small class="item-mandatory">*</small>
+            <input type="text" autocomplete="off" value="吴先生">
+            <div class="item-error show">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">
+            英文名:</span>
+          <div class="item-content">
+            <small class="item-mandatory">*</small>
+            <input type="text" autocomplete="off" value="jerry">
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">
+            类型:</span>
+          <div class="item-content">
+            <input type="text" autocomplete="off">
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">性别:</span>
+          <div class="item-content ">
+            <small class="item-mandatory">*</small>
+            <div class="item-select">
+              <select name="" class="input-select  type-select" autocomplete="off">
+                <option value="man">男</option>
+                <option value="woman">女</option>
+              </select>
+            </div>
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item  item-input">
+          <span class="item-prefix">
+            生日:</span>
+          <div class="item-content">
+            <small class="item-mandatory">*</small>
+            <div class="item-date">
+              <input type="text" readonly id="time" style="text-align:left" autocomplete="off">
+            </div>
+            <div class="item-error show">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">年龄层:</span>
+          <div class="item-content ">
+            <small class="item-mandatory">*</small>
+            <div class="item-select">
+              <select name="" class="input-select  type-select" autocomplete="off">
+                <option value="man">10-20</option>
+                <option value="woman">20-30</option>
+              </select>
+            </div>
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <small class="item-mandatory">*</small>
+          <span class="item-prefix">移动电话:</span>
+          <div class="item-content ">
+            <small class="item-mandatory">*</small>
+            <div class="item-select">
+              <select name="" class="phone-select  type-select" autocomplete="off">
+                <option value="86">+86(china)</option>
+              </select>
+              <input type="number" maxlength="11" autocomplete="off">
+            </div>
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">
+            电子邮件:</span>
+          <div class="item-content">
+            <input type="text" autocomplete="off">
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">通信地址:</span>
+          <div class="item-content ">
+            <div class="item-select">
+              <select name="" class="input-select  type-select" autocomplete="off">
+                <option value="man">10-20</option>
+                <option value="woman">20-30</option>
+              </select>
+            </div>
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">省:</span>
+          <div class="item-content ">
+            <div class="item-select">
+              <select name="" class="input-select  type-select" autocomplete="off">
+                <option value="man">10-20</option>
+                <option value="woman">20-30</option>
+              </select>
+            </div>
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">市:</span>
+          <div class="item-content ">
+            <div class="item-select">
+              <select name="" class="input-select  type-select" autocomplete="off">
+                <option value="man">10-20</option>
+                <option value="woman">20-30</option>
+              </select>
+            </div>
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">区:</span>
+          <div class="item-content ">
+            <div class="item-select">
+              <select name="" class="input-select  type-select" autocomplete="off">
+                <option value="man">10-20</option>
+                <option value="woman">20-30</option>
+              </select>
+            </div>
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">
+            地址:</span>
+          <div class="item-content">
+            <textarea type="text" class=" item-address" autocomplete="off"></textarea>
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">
+            邮编:</span>
+          <div class="item-content">
+            <input type="text" autocomplete="off">
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item  item-input">
+          <span class="item-prefix">
+            加入日期:</span>
+          <div class="item-content">
+            <div class="item-date">
+              <input type="text" readonly id="time" style="text-align:left" autocomplete="off" value="2018-02-12">
+            </div>
+            <div class="item-error show">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">职业:</span>
+          <div class="item-content ">
+            <small class="item-mandatory">*</small>
+            <div class="item-select">
+              <select name="" class="input-select  type-select" autocomplete="off">
+                <option value="man">会计学</option>
+                <option value="woman">历史学</option>
+              </select>
+            </div>
+            <div class="item-error">
+              生日是必填項哦
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">你希望收到initial的咨询?</span>
+          <div class="item-content ">
+            <small class="item-mandatory">*</small>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox" class="emulate-ios-button"></label>
+            </div>
+          </div>
+        </article>
+        <!-- <div class="input-box">
+          <div class="regin-btn">重设</div>
+          <div class="regin-btn">保存</div>
+        </div> -->
+      </div>
+    </section>
+    <section class="container from-box">
+      <!-- 从哪里得知Initial -->
+      <section class="question-group">
+        <h3 class="title">从哪里得知Initial?
+          <small class="title-small">(可选择多项)</small>
+        </h3>
+        <article class="question-article">
+          <h3 class="title">选择以下项</h3>
+          <div class="ques-item">
+            <span>广告</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox0" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>朋友/家人</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox1" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox1" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>商场</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox2" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox2" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>杂志</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox3" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox3" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>微博</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>微信</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>Instrgram</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>Facebook</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!-- 你会想收到什么礼物 -->
+      <section class="question-group">
+        <h3 class="title">你会想收到什么礼物?
+          <small class="title-small">(可选择多项)</small>
+        </h3>
+        <article class="question-article">
+          <h3 class="title">选择以下项</h3>
+          <div class="ques-item">
+            <span>家居小用品
+              <small class="item-small">(如香水)</small>
+            </span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox0" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>户外用品
+              <small class="item-small">(如雨伞)</small>
+            </span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox1" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox1" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>科技用品
+              <small class="item-small">(如充电器)</small>
+            </span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox2" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox2" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>皮质产品</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox3" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox3" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>饰物</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>其他</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="other" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="other" class="emulate-ios-button"></label>
+            </div>
+          </div>
+        </article>
+        <article class="item item-input otherHide">
+          <span class="item-prefix">
+            其他</span>
+          <div class="item-content">
+            <input type="text" autocomplete="off">
+          </div>
+        </article>
+      </section>
+      <!-- 客人考虑因素/收入 -->
+      <section class="question-group">
+        <article class="item item-input">
+          <span class="item-prefix">客人购物考虑因素?</span>
+          <div class="item-content ">
+            <div class="item-select">
+              <select name="" class="input-select  type-select" autocomplete="off">
+                <option value="man">10-20</option>
+                <option value="woman">20-30</option>
+              </select>
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">客人估计收入?</span>
+          <div class="item-content ">
+            <div class="item-select">
+              <select name="" class="input-select  type-select" autocomplete="off">
+                <option value="man">10-20</option>
+                <option value="woman">20-30</option>
+              </select>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!-- 员工信息 -->
+      <section class="question-group">
+        <h3 class="centerText">员工信息</h3>
+        <article class="item item-input">
+          <span class="item-prefix">
+            店铺区域</span>
+          <div class="item-content">
+            <input type="text" autocomplete="off" disabled>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">
+            店铺编号</span>
+          <div class="item-content">
+            <input type="text" autocomplete="off" disabled>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">员工编号</span>
+          <div class="item-content ">
+            <div class="item-select">
+              <select name="" class="input-select  type-select" autocomplete="off">
+                <option value="man">10-20</option>
+                <option value="woman">20-30</option>
+              </select>
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">
+            员工名</span>
+          <div class="item-content">
+            <input type="text" autocomplete="off" disabled>
+          </div>
+        </article>
+      </section>
+      <!-- 客人喜欢颜色 -->
+      <section class="question-group">
+        <h3 class="title">客人喜欢颜色?
+          <small class="title-small">(可选择多项)</small>
+        </h3>
+        <article class="question-article">
+          <h3 class="title">选择以下项</h3>
+          <div class="ques-item">
+            <span>黑色</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox0" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>灰色</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox1" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox1" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>深蓝色</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox2" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox2" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>白色</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox3" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox3" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>军绿色</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>粉色系统</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>自然色系</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>鲜艳色系</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>其他</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+        </article>
+        <article class="item item-input">
+          <span class="item-prefix">
+            其他</span>
+          <div class="item-content">
+            <input type="text" autocomplete="off">
+          </div>
+        </article>
+      </section>
+      <!-- 客人喜欢单品 -->
+      <section class="question-group">
+        <h3 class="title">客人喜欢单品
+          <small class="title-small">(可选择多项)</small>
+        </h3>
+        <article class="question-article">
+          <h3 class="title">选择以下项</h3>
+          <div class="ques-item">
+            <span>配饰</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox0" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>羽绒</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox1" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox1" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>西装系统</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox2" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox2" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>帽子</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox3" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox3" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>手袋</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>鞋履</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>上衣/恤衫</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>裙</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>裤</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>大衣</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>皮褛</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!-- 购物目的 -->
+      <section class="question-group">
+        <h3 class="title">客人喜欢单品
+          <small class="title-small">(可选择多项)</small>
+        </h3>
+        <article class="question-article">
+          <h3 class="title">选择以下项</h3>
+          <div class="ques-item">
+            <span>配饰</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox0" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>羽绒</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox1" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox1" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>西装系统</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox2" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox2" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>帽子</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox3" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox3" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>手袋</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>鞋履</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>上衣/恤衫</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>裙</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>裤</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>大衣</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+          <div class="ques-item">
+            <span>皮褛</span>
+            <div class="ios-checkbox">
+              <input type="checkbox" id="ios-checkbox4" name="emulate-ios-button" class=" hide raw-checkbox ">
+              <label for="ios-checkbox4" class="emulate-ios-button"></label>
+            </div>
+          </div>
+        </article>
+      </section>
+      <div class="input-box">
+        <div class="regin-btn">重设</div>
+        <div class="regin-btn">保存</div>
+      </div>
+
+    </section>
+    <aside class="setting ">
+      <ul class="setting-list hide">
+        <li>
+          <span>
+            English
+          </span>
+        </li>
+        <li>
+          <span>
+            繁体中文
+          </span>
+        </li>
+        <li class="active">
+          <span>
+            简体中文
+          </span>
+        </li>
+      </ul>
+      <img class="icon icon-set" src="../static/images/icon-set.png" alt="">
+    </aside>
+  </main>
+
+  <aside class="layer hide">
+    <div class="layer-center from-box hide">
+      <h3 class="layer-title">温馨提示</h3>
+      <div class="layer-msg">
+        <span class="blue-ft">135 9868 4757 </span>该手机号已注册可通过APP或微信端登录~~
+      </div>
+      <div class="input-item input-button">
+        知道了
+      </div>
+    </div>
+    <div class="layer-center success">
+      <img class="success-img" src="../static/images/icon-success.png" alt=""> 恭喜,注册成功!
+    </div>
+
+  </aside>
+  <!-- <script src="../static/js/zepto.min.js"></script>
+  <script src="../static/js/laydate/laydate.js"></script> -->
+  <script>
+    document.getElementById("other").addEventListener("click", function () {
+      console.log(this.checked)
+    })
+    // laydate.render({
+    //   elem: '#time' //指定元素 }); $(".icon-set").on('click', function () { $(".setting-list").toggleClass("hide")
+    // }) $(".logo").on('click', function () {
+    //   $(".layer").toggleClass("hide") $(".layer-center.from-box").addClass("hide") $(".success").removeClass("hide")
+    // }) $(".layer").on('click', function () { $(".layer").toggleClass("hide") }) $(".input-button").on('click', function () { $(".layer").toggleClass("hide") $(".layer-center.from-box").removeClass("hide") $(".success").addClass("hide") })
+  </script>
+
+</body>
+
+</html>

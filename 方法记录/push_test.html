@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="button" value="按钮" id="btn">
+  <script src="push.js"></script>
+  <script src="push_servece.js"></script>
+  <script>
+    const btn = document.querySelector("#btn");
+    btn.addEventListener("click", () => {
+      create()
+      alert(1)
+    })
+    
+    function create() {
+      Push.create("Hello world!", {
+        body: "How's it hangin'?",
+        timeout: 4000,
+        onClick: function () {
+          window.focus();
+          this.close();
+        }
+      });
+    }
+
+    console.log(Push);
+
+  </script>
+</body>
+
+</html>

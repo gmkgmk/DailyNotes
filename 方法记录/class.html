@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>class</title>
+</head>
+
+<body>
+  <script>
+    /*
+* 1,箭头函数没有this,他的this是使用函数外层以function生成的函数的this;
+* 2,箭頭函數的this是在定义的時候就確定，而不是使用时候的对象；
+* 3,箭头函数没有this,所以call,apply,bind等方法对于箭头函数没有用,智能传参;
+* 4.
+*/
+    class Base {
+      constructor(fn) {
+        this.id = 1;
+        this.fn = fn;
+        this.fn()
+      }
+    }
+    const fn_arrow = () => {
+      console.log(this)
+    }
+    const fn_func = function () {
+      console.log(this)
+    }
+    const baseKlass = new Base(fn_arrow)
+
+  </script>
+</body>
+
+</html>

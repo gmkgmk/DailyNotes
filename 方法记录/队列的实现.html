@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>实现一个队列</title>
+</head>
+
+<body>
+  <script>
+    function Queue() {
+      this.stack = [];
+    }
+    Queue.prototype = {
+      enterQueue: function (element) {//入队
+        this.stack.push(element)
+      },
+      outQueue: function () {//出队
+        if (this.empty()) return '队列已经空了';
+        else this.stack.shift();
+      },
+      frist: function () {
+        return this.stack[0]
+      },
+      last: function () {
+        return this.stack[this.stack.length - 1]
+      },
+      findAll: function () {
+        return this.stack
+      },
+      clear: function () {
+        delete this.stack;
+        this.stack = []
+      },
+      empty: function () {
+        if (this.stack.length == 0) return true;
+        else return false;
+      }
+    }
+
+    // var queue = new Queue();
+    // queue.enterQueue("first");
+    // queue.enterQueue("second");
+    // queue.enterQueue("thried");
+    // queue.outQueue();
+
+    // var frist = queue.frist();
+    // var last = queue.last();
+    // var all = queue.findAll();
+
+    // console.log(queue)
+    // console.log(frist)
+    // console.log(last)
+    // console.log(all)
+
+    // queue.clear();
+    // var clearAll = queue.findAll();
+    // console.log(clearAll)
+
+    var queues = [];    //定义队列数组
+    var nums = [];      //定义数字数组
+    var n = 10;
+    //选十个0~99的随机数进行排序
+    for (var i = 0; i < n; i++) {
+      queues[i] = new Queue();
+      nums[i] = Math.floor(Math.random() * 101);
+    }
+
+    //排序之前
+    console.log('before radix sort: ' + nums);
+    distribution(1);
+    collect();
+    distribution(10);
+    collect();
+
+    function distribution(digit) {
+      for (var i = 0; i < n; i++) {
+        if (digit == 1) {
+          queues[nums[i] % 10].enterQueue(nums[i]);
+        } else {
+          queues[Math.floor(nums[i] / 10)].enterQueue(nums[i]);
+        }
+      }
+    }
+
+    function collect() {
+      var i = 0;
+      for (var digit = 0; digit < 10; digit++) {
+        while (!queues[digit].empty()) {
+          nums[i++] = queues[digit].frist();
+          queues[digit].outQueue();
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

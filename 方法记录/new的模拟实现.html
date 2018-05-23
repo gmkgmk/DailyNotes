@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>New的模拟实现</title>
+</head>
+
+<body>
+  <script>
+    function objectFactory() {
+
+      var obj = new Object;
+
+      Constructor = [].shift.call(arguments);
+
+      obj.__proto__ = Constructor.prototype;
+
+      var ret = Constructor.apply(obj, arguments);
+
+      return typeof ret === 'object' ? ret : obj;
+    };
+
+
+
+  </script>
+</body>
+
+</html>

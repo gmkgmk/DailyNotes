@@ -1,0 +1,12 @@
+.left-col{
+  width: 240px
+}
+.mid-col{
+  left: 250px;
+}
+.mid-col .article{
+  margin: 0;
+}
+.body-wrap{
+  margin-bottom: 0;
+}
